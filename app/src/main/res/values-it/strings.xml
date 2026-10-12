@@ -56,6 +56,8 @@
     <string name="permission_nearby_message">Questa autorizzazione consente all\'app di scoprire dispositivi vicini sulla tua rete.</string>
     <string name="grant_permission">Concedi Autorizzazione</string>
     <string name="skip">Salta</string>
+    <string name="permission_local_network_denied">L\'autorizzazione Dispositivi Vicini è necessaria per scansionare la rete locale.</string>
+    <string name="action_open_settings">Apri impostazioni</string>
 
     <!-- Theme -->
     <string name="theme_light">Chiaro</string>

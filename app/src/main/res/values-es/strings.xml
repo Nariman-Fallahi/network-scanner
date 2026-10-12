@@ -56,6 +56,8 @@
     <string name="permission_nearby_message">Este permiso permite a la aplicación descubrir dispositivos cercanos en tu red.</string>
     <string name="grant_permission">Otorgar permiso</string>
     <string name="skip">Omitir</string>
+    <string name="permission_local_network_denied">Se necesita el permiso de dispositivos cercanos para escanear tu red local.</string>
+    <string name="action_open_settings">Abrir configuración</string>
 
     <!-- Theme -->
     <string name="theme_light">Claro</string>
