@@ -139,7 +139,7 @@ class NetworkScanner(private val context: Context) {
             // Phase 2.5: Re-read ARP cache to get MAC addresses for discovered devices
             ArpReader.invalidateCache()
             updateProgress(ScanPhase.PING_SWEEP, 0.55f, context.getString(R.string.getting_device_information))
-            enrichDevicesWithArpData()
+            enrichDevicesWithArpData(networkInfo)
 
             // Phase 3: mDNS discovery
             updateProgress(ScanPhase.MDNS_DISCOVERY, 0.6f, context.getString(R.string.discovering_services))
@@ -810,7 +810,7 @@ class NetworkScanner(private val context: Context) {
      * Enrich discovered devices with MAC addresses and vendor info from ARP cache.
      * Called after ping sweep to get MAC addresses that were populated during pinging.
      */
-    private suspend fun enrichDevicesWithArpData() {
+    private suspend fun enrichDevicesWithArpData(networkInfo: NetworkInfo) {
         // Re-read ARP cache - it should now have entries for devices we pinged.
         // Privileged entries come last so they win over the app's restricted view.
         val arpEntries = ArpReader.readValidEntries() +
@@ -819,7 +819,9 @@ class NetworkScanner(private val context: Context) {
 
         // Update devices with MAC and vendor info
         for ((ip, device) in discoveredDevices.toMap()) {
-            if (device.macAddress == null || device.vendor == null) {
+            // A gateway MAC taken from the Wi-Fi BSSID is a guess; a real entry replaces it.
+            val guessed = networkInfo.bssid != null && device.macAddress == networkInfo.bssid
+            if (device.macAddress == null || device.vendor == null || guessed) {
                 val arpEntry = arpMap[ip]
                 if (arpEntry != null) {
                     val mac = arpEntry.normalizedMac
@@ -833,7 +835,7 @@ class NetworkScanner(private val context: Context) {
 
                     val updatedDevice = device.copy(
                         macAddress = mac,
-                        vendor = vendor ?: device.vendor,
+                        vendor = if (guessed) vendor else vendor ?: device.vendor,
                         deviceType = if (device.isCurrentDevice) DeviceType.SMARTPHONE
                                      else if (device.deviceType == DeviceType.UNKNOWN) deviceType
                                      else device.deviceType
@@ -1357,9 +1359,16 @@ class NetworkScanner(private val context: Context) {
      * Identify devices by resolving hostnames (in parallel) and determining device types.
      */
     private suspend fun identifyDevices() = coroutineScope {
-        // Final ARP cache read to catch any remaining MAC addresses
+        // Final ARP cache read to catch any remaining MAC addresses. The NetBIOS
+        // queries have just reached every host, including those found after the
+        // sweep, so the privileged table is read again while a MAC is missing.
         ArpReader.invalidateCache()
-        val arpEntries = ArpReader.readValidEntries()
+        val arpEntries = ArpReader.readValidEntries() +
+            if (discoveredDevices.values.any { it.macAddress == null && !it.isCurrentDevice }) {
+                PrivilegedNeighborSource.read(PrivilegedNeighborSource.mode(context))
+            } else {
+                emptyList()
+            }
         val arpMap = arpEntries.associateBy { it.ipAddress }
 
         val entries = discoveredDevices.toMap()
