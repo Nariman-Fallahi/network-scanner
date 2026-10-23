@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Network Scanner</string>
+
+    <!-- Menü öğeleri -->
+    <string name="action_settings">Ayarlar</string>
+    <string name="action_refresh">Yenile</string>
+    <string name="action_theme">Temayı Değiştir</string>
+
+    <!-- Tarama durumları -->
+    <string name="scanning">Ağ taranıyor…</string>
+    <string name="scan_complete">Tarama tamamlandı</string>
+    <string name="devices_found">%d cihaz bulundu</string>
+    <string name="pull_to_refresh">Yenilemek için aşağı çekin</string>
+
+    <!-- Başlangıç durumu -->
+    <string name="initial_scan_title">Ağınızı Tarayın</string>
+    <string name="initial_scan_message">Wi-Fi ağınıza bağlı tüm cihazları görüntüleyin</string>
+    <string name="action_scan_network">Ağı Tara</string>
+
+    <!-- Cihaz bölümleri -->
+    <string name="section_active">Aktif Cihazlar</string>
+    <string name="section_offline">Çevrimdışı Cihazlar</string>
+
+    <!-- Cihaz bilgileri -->
+    <string name="unknown_device">Bilinmeyen Cihaz</string>
+    <string name="unknown_manufacturer">Bilinmeyen Üretici</string>
+    <string name="ip_address">IP: %s</string>
+    <string name="mac_address">MAC: %s</string>
+    <string name="hostname">Ana makine adı: %s</string>
+    <string name="last_seen">Son görülme: %s</string>
+    <string name="this_device">Bu Cihaz</string>
+
+    <!-- Boş durumlar -->
+    <string name="no_devices_title">Cihaz Bulunamadı</string>
+    <string name="no_devices_message">Bir Wi-Fi ağına bağlı olduğunuzdan emin olup tekrar deneyin.</string>
+    <string name="no_wifi_title">Ağ Bağlantısı Yok</string>
+    <string name="no_wifi_message">Etkin bir ağ arabirimi bulunamadı. Lütfen bir ağa bağlanıp tekrar deneyin.</string>
+    <string name="no_active_interfaces">Etkin arabirim yok</string>
+
+    <!-- Arabirim Türleri -->
+    <string name="interface_type_wifi">Wi-Fi</string>
+    <string name="network_name_unknown">Bilinmeyen</string>
+    <string name="interface_type_ethernet">Ethernet</string>
+    <string name="interface_type_vpn">VPN</string>
+    <string name="interface_type_cellular">Hücresel</string>
+    <string name="interface_type_network">Ağ</string>
+    
+    <!-- Hatalar -->
+    <string name="error_scan_failed">Tarama başarısız oldu: %s</string>
+    <string name="error_permission_denied">İzin reddedildi</string>
+    <string name="error_no_network">Ağ bağlantısı yok</string>
+
+    <!-- İzinler -->
+    <string name="permission_location_title">Taramayı İyileştir</string>
+    <string name="permission_location_message">Ağ taraması sırasında Wi-Fi bilgilerine erişebilmek için konum izni gereklidir.</string>
+    <string name="permission_optional_message">Konum izni vermek, daha fazla cihaz bulunmasına ve ağ bilgilerinin doğru gösterilmesine yardımcı olur. Bu izin isteğe bağlıdır; uygulama izin verilmeden de çalışır.</string>
+    <string name="permission_nearby_title">Yakındaki Cihazlar İzni</string>
+    <string name="permission_nearby_message">Bu izin, uygulamanın yerel ağınızdaki diğer cihazları bulmasını sağlar.</string>
+    <string name="grant_permission">İzin Ver</string>
+    <string name="skip">Atla</string>
+    <string name="permission_local_network_denied">Yerel ağınızı taramak için yakındaki cihazlar izni gereklidir.</string>
+    <string name="action_open_settings">Ayarları Aç</string>
+
+    <!-- Tema -->
+    <string name="theme_light">Açık</string>
+    <string name="theme_dark">Koyu</string>
+    <string name="theme_system">Sistem</string>
+
+    <!-- İçerik açıklamaları -->
+    <string name="cd_device_icon">Cihaz türü simgesi</string>
+    <string name="cd_scan_button">Ağ taramasını başlat</string>
+    <string name="cd_device_status">Cihaz durumu göstergesi</string>
+
+    <!-- Cihaz Ayrıntıları Ekranı -->
+    <string name="device_details">Cihaz Ayrıntıları</string>
+    <string name="section_identity">Kimlik</string>
+    <string name="section_network">Ağ</string>
+    <string name="deep_scan_results">Derin Tarama Sonuçları</string>
+    <string name="open_ports">Açık Portlar</string>
+
+    <!-- Etiketler -->
+    <string name="label_ip_address">IP Adresi</string>
+    <string name="label_mac_address">MAC Adresi</string>
+    <string name="label_mac_address_randomized">MAC Adresi (rastgele)</string>
+    <string name="label_vendor">Üretici</string>
+    <string name="label_latency">Gecikme</string>
+    <string name="label_hostname">Ana Makine Adı</string>
+    <string name="label_netbios_name">NetBIOS Adı</string>
+    <string name="label_services">Hizmetler</string>
+    <string name="label_discovered_via">Keşif Yöntemi</string>
+    <string name="label_detected_os">Tespit Edilen İşletim Sistemi</string>
+    <string name="label_scan_duration">Tarama Süresi</string>
+    <string name="label_friendly_name">Görünen Ad</string>
+    <string name="label_model">Model</string>
+    <string name="label_serial_number">Seri Numarası</string>
+    <string name="label_os_hint">İşletim Sistemi İpucu (TTL)</string>
+    <string name="label_workgroup">Çalışma Grubu</string>
+    <string name="label_upnp_type">UPnP Türü</string>
+    <string name="label_web_interface">Web Arayüzü</string>
+
+    <!-- TTL tabanlı işletim sistemi ipuçları -->
+    <string name="ttl_hint_unix">%d (Linux/Android/iOS)</string>
+    <string name="ttl_hint_windows">%d (Windows)</string>
+    <string name="ttl_hint_network">%d (Yönlendirici/Anahtar)</string>
+
+    <!-- Yedek değerler -->
+    <string name="port_service_unknown">Bilinmeyen</string>
+    <string name="cd_open_in_browser">Tarayıcıda aç</string>
+
+    <!-- Derin Tarama Durumları -->
+    <string name="tap_to_deep_scan">Derin tarama başlatmak için dokunun</string>
+    <string name="start_deep_scan">Derin Taramayı Başlat</string>
+    <string name="no_open_ports">Açık port bulunamadı</string>
+    <string name="scan_failed">Tarama başarısız oldu</string>
+    <string name="device_offline">Cihaz çevrimdışı</string>
+
+    <!-- Eylemler -->
+    <string name="action_cancel">İptal</string>
+    <string name="action_copy">Kopyala</string>
+    <string name="copied_to_clipboard">Panoya kopyalandı</string>
+    <string name="action_clear">Temizle</string>
+
+    <!-- Durum -->
+    <string name="status_online">Çevrim içi</string>
+    <string name="status_offline">Çevrimdışı</string>
+
+    <!-- Biçimlendirme dizeleri -->
+    <string name="latency_ms">%dms</string>
+    <string name="confidence_percent">%d%% güvenilirlik</string>
+    <string name="duration_seconds">%.1fs</string>
+    <string name="action_retry">Yeniden Dene</string>
+    <string name="interface_option_format">%1$s (%2$s) - %3$s</string>
+
+    <!-- Ayarlar Ekranı -->
+    <string name="settings_title">Ayarlar</string>
+
+    <!-- Tercih Kategorileri -->
+    <string name="pref_category_appearance">Görünüm</string>
+    <string name="pref_category_scanning">Tarama</string>
+    <string name="pref_category_data">Veri</string>
+    <string name="pref_category_about">Hakkında</string>
+
+    <!-- Görünüm Tercihleri -->
+    <string name="pref_theme_title">Tema</string>
+    <string name="pref_language_title">Dil</string>
+    <string name="language_system_default">Sistem varsayılanı</string>
+    <string name="pref_dynamic_colors_title">Dinamik Renkler</string>
+    <string name="pref_dynamic_colors_summary">Duvar kağıdınızdaki renkleri kullanın (Android 12+)</string>
+
+    <!-- Tarama Tercihleri -->
+    <string name="pref_auto_scan_title">Açılışta Otomatik Tara</string>
+    <string name="pref_auto_scan_summary">Uygulama açıldığında taramayı otomatik olarak başlat</string>
+    <string name="pref_scan_timeout_title">Tarama Zaman Aşımı</string>
+    <string name="pref_neighbor_source_title">MAC Adresi Erişimi</string>
+    <string name="pref_neighbor_source_summary">Android 10 ve üzeri sürümler, diğer cihazların MAC adreslerini uygulamalardan gizler. Bu adresleri Shizuku veya Root erişimiyle görüntüleyebilirsiniz.</string>
+
+    <!-- Zaman aşımı seçenekleri -->
+    <string name="timeout_fast">Hızlı (3 saniye)</string>
+    <string name="timeout_normal">Normal (5 saniye)</string>
+    <string name="timeout_thorough">Kapsamlı (10 saniye)</string>
+
+    <!-- MAC adresi erişim seçenekleri -->
+    <string name="neighbor_source_none">Kapalı</string>
+    <string name="neighbor_source_shizuku" translatable="false">Shizuku</string>
+    <string name="neighbor_source_root">Root</string>
+
+    <!-- Veri Tercihleri -->
+    <string name="pref_clear_cache_title">Önbelleği Temizle</string>
+    <string name="pref_clear_cache_summary">Geçici tarama verilerini temizle</string>
+    <string name="pref_clear_history_title">Cihaz Geçmişini Temizle</string>
+    <string name="pref_clear_history_summary">Kayıtlı tüm cihaz bilgilerini sil</string>
+
+    <!-- Hakkında Tercihleri -->
+    <string name="pref_version_title">Sürüm</string>
+    <string name="pref_about_title">Network Scanner Hakkında</string>
+    <string name="pref_about_summary">Uygulama bilgileri ve katkıda bulunanlar</string>
+    <string name="pref_privacy_title">Gizlilik Politikası</string>
+    <string name="pref_privacy_summary">Verilerinizin nasıl işlendiği</string>
+
+    <!-- İletişim Kutuları -->
+    <string name="dialog_clear_cache_title">Önbellek Temizlensin mi?</string>
+    <string name="dialog_clear_cache_message">Bu işlem tüm geçici tarama verilerini temizler. Cihaz geçmişiniz korunur.</string>
+    <string name="dialog_clear_history_title">Cihaz Geçmişi Temizlensin mi?</string>
+    <string name="dialog_clear_history_message">Bu işlem, özel adlar da dahil olmak üzere kayıtlı tüm cihaz bilgilerini siler. Bu işlem geri alınamaz.</string>
+    <string name="dialog_about_title">Network Scanner Hakkında</string>
+    <string name="dialog_about_message" formatted="false">Network Scanner, yerel ağınızdaki cihazları bulmak ve analiz etmek için tasarlanmış güçlü bir araçtır.\n\nGizliliğinize önem verilerek geliştirilmiştir. Tüm tarama işlemleri yalnızca cihazınızda yerel olarak gerçekleştirilir.\n\n⚠️ Not: Cihaz tespiti ve port taraması kesin sonuç garantisi vermez. Sonuçlar ağ koşullarına ve cihaz yapılandırmalarına bağlı olarak farklılık gösterebilir.\n\nSürüm 1.0.0 | GPL-3.0 Lisansı</string>
+    <string name="view_on_github">GitHub\'da Görüntüle</string>
+    <string name="github_url">https://github.com/usamaiqb/network-scanner</string>
+    <string name="deep_scan_disclaimer">Port ve işletim sistemi tespiti tahmini olup kesin sonuç vermeyebilir</string>
+    <string name="dialog_privacy_title">Gizlilik Politikası</string>
+    <string name="dialog_privacy_message">Network Scanner gizliliğinize saygı duyar:\n\n• Veri toplanmaz: Tüm tarama sonuçları cihazınızda kalır\n• Reklam veya takip içermez\n• Tarama için internet izni gerekmez\n\nKonum izni, konumunuzu izlemek için değil; yalnızca Android\'in zorunlu kıldığı Wi-Fi bilgilerine erişmek için kullanılır.</string>
+    <string name="dialog_theme_restart_title">Tema Değiştirildi</string>
+    <string name="dialog_theme_restart_message">Dinamik renk değişiklikleri, uygulama yeniden başlatıldığında tam olarak geçerli olacaktır.</string>
+
+    <!-- Toast Mesajları -->
+    <string name="cache_cleared">Önbellek temizlendi</string>
+    <string name="history_cleared">Cihaz geçmişi temizlendi</string>
+    <string name="neighbor_source_shizuku_unavailable">Shizuku çalışmıyor veya izin reddedildi</string>
+    <string name="neighbor_source_root_unavailable">Root erişimi reddedildi</string>
+    <string name="neighbor_status_ready">Hazır</string>
+    <string name="neighbor_status_shizuku_will_prompt">Shizuku izin isteyecek</string>
+    <string name="neighbor_status_shizuku_denied">İzin reddedildi. Shizuku uygulamasından izin verin</string>
+    <string name="neighbor_status_shizuku_outdated">Shizuku\'nun güncellenmesi gerekiyor</string>
+    <string name="neighbor_status_shizuku_not_running">Shizuku çalışmıyor</string>
+    <string name="neighbor_status_root_will_prompt">Root yöneticiniz erişim izni isteyecek</string>
+    <string name="neighbor_status_root_not_found">Bu cihazda root erişimi tespit edilemedi</string>
+    <string name="neighbor_status_waiting">Erişim bekleniyor…</string>
+
+    <!-- Erişilebilirlik - İçerik Açıklamaları -->
+    <string name="cd_settings_button">Ayarları aç</string>
+    <string name="cd_theme_button">Temayı değiştir</string>
+    <string name="cd_refresh_button">Cihaz listesini yenile</string>
+    <string name="cd_device_online">Cihaz çevrim içi</string>
+    <string name="cd_device_offline">Cihaz çevrimdışı</string>
+    <string name="cd_navigate_back">Geri dön</string>
+    <string name="cd_start_deep_scan">Bu cihaz için derin taramayı başlat</string>
+    <string name="cd_cancel_scan">Mevcut taramayı iptal et</string>
+    <string name="cd_empty_state_icon">Cihaz bulunamadı görseli</string>
+    <string name="cd_network_info">Ağ bilgileri</string>
+    <string name="cd_interface_selector">Ağ arabirimini seçin</string>
+    <string name="cd_port_status">Port %1$d: %2$s</string>
+
+    <!-- Cihaz listesi erişilebilirliği -->
+    <string name="cd_device_item">%1$s, %2$s, IP %3$s</string>
+    <string name="cd_device_current">Kullandığınız cihaz</string>
+    <string name="cd_section_header">%1$s bölümü, %2$d cihaz</string>
+
+    <!-- Derin tarama ilerlemesi -->
+    <string name="deep_scan_port_progress">%1$d/%2$d port</string>
+    <string name="deep_scan_open_count">%d açık</string>
+
+    <!-- Özel Cihaz Adları -->
+    <string name="edit_device_name">Cihaz Adını Düzenle</string>
+    <string name="edit_device_name_hint">Kolayca tanımak için bu cihaza özel bir ad verin</string>
+    <string name="device_name">Cihaz Adı</string>
+    <string name="action_save">Kaydet</string>
+
+    <!-- Özel Portlar -->
+    <string name="custom_ports">Özel Portlar</string>
+    <string name="add_port">Port Ekle</string>
+    <string name="add_custom_port">Özel Port Ekle</string>
+    <string name="port_number">Port Numarası</string>
+    <string name="service_name">Hizmet Adı</string>
+    <string name="action_add">Ekle</string>
+    <string name="delete_port">Portu sil</string>
+    <string name="no_custom_ports">Tanımlı özel port yok</string>
+    <string name="tap_add_to_create">Taranacak özel port eklemek için + simgesine dokunun</string>
+
+    <!-- Tam Port Taraması -->
+    <string name="full_scan">Tam Tarama</string>
+    <string name="full_port_scan">Tam Port Taraması</string>
+    <string name="full_scan_warning">Bu işlem, cihazdaki 65.535 portun tümünü tarar. Birkaç dakika sürebilir ve yoğun ağ trafiği oluşturabilir.</string>
+    <string name="full_scan_details">• Tarama süresi: 1–3 dakika\n• Yoğun ağ trafiği oluşturur\n• Güvenlik sistemleri tarafından algılanabilir</string>
+    <string name="action_start">Başlat</string>
+
+    <!-- Ayarlar - Özel Portlar -->
+    <string name="pref_custom_ports_title">Özel Portlar</string>
+    <string name="pref_custom_ports_summary">Derin tarama sırasında taranacak portları yönetin</string>
+
+    <!-- Cihaz Simgesi Seçimi -->
+    <string name="choose_device_icon">Cihaz Simgesi Seçin</string>
+
+    <!-- Ağ tarayıcı ilerlemesi -->
+    <string name="checking_network_connectivity">Ağ bağlantısı kontrol ediliyor…</string>
+    <string name="classifying_devices">Cihazlar sınıflandırılıyor</string>
+    <string name="identifying_devices">Cihazlar tanımlanıyor…</string>
+    <string name="resolving_netbios_names">NetBIOS adları çözümleniyor</string>
+    <string name="finding_upnp_devices">UPnP cihazları aranıyor…</string>
+    <string name="discovering_services">Hizmetler keşfediliyor…</string>
+    <string name="getting_device_information">Cihaz bilgileri alınıyor…</string>
+    <string name="scanning_network">Ağ taranıyor…</string>
+    <string name="reading_arp_cache">ARP önbelleği okunuyor…</string>
+    <string name="analyzing_port">Port %1$d analiz ediliyor…</string>
+    <string name="scanning_ports">Portlar taranıyor…</string>
+    <string name="scanning_port">Port %1$d taranıyor…</string>
+    <string name="scanned_addresses_progress">%1$d/%2$d adres tarandı</string>
+    <string name="detecting_os">İşletim sistemi tespit ediliyor…</string>
+
+</resources>

@@ -106,6 +106,7 @@ The APK is written to `app/build/outputs/apk/debug/`. See [CONTRIBUTING.md](CONT
 | فارسی | ████████████ 100% |
 | Italiano | ████████████ 100% |
 | Русский | ███████████░ 92% |
+| Türkçe | ████████████ 100% |
 | Українська | ████████████ 99% |
 | 中文 (中国) | ████████████ 100% |
 <!-- translations:end -->

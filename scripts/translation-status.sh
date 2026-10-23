@@ -27,6 +27,7 @@ display_name() {
         zh-rCN) echo "中文 (中国)" ;;
         it) echo "Italiano"   ;;
         de) echo "Deutsch"    ;;
+        tr) echo "Türkçe"     ;;
         *)  echo "$1"         ;;
     esac
 }
