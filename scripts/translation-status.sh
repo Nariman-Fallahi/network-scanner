@@ -28,6 +28,7 @@ display_name() {
         it) echo "Italiano"   ;;
         de) echo "Deutsch"    ;;
         tr) echo "Türkçe"     ;;
+        ro) echo "Română"     ;;
         *)  echo "$1"         ;;
     esac
 }

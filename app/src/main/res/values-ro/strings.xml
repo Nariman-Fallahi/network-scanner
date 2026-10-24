@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Menu items -->
+    <string name="action_settings">Setări</string>
+    <string name="action_refresh">Reîmprospătează</string>
+    <string name="action_theme">Schimbă tema</string>
+
+    <!-- Scan states -->
+    <string name="scanning">Se scanează rețeaua…</string>
+    <string name="scan_complete">Scanare finalizată</string>
+    <string name="devices_found">%d dispozitive găsite</string>
+    <string name="pull_to_refresh">Trage în jos pentru reîmprospătare</string>
+
+    <!-- Initial state -->
+    <string name="initial_scan_title">Scanează-ți rețeaua</string>
+    <string name="initial_scan_message">Descoperă toate dispozitivele conectate la rețeaua ta Wi-Fi</string>
+    <string name="action_scan_network">Scanează rețeaua</string>
+
+    <!-- Device sections -->
+    <string name="section_active">Dispozitive active</string>
+    <string name="section_offline">Dispozitive deconectate</string>
+
+    <!-- Device info -->
+    <string name="unknown_device">Dispozitiv necunoscut</string>
+    <string name="unknown_manufacturer">Producător necunoscut</string>
+    <string name="ip_address">IP: %s</string>
+    <string name="mac_address">MAC: %s</string>
+    <string name="hostname">Nume gazdă: %s</string>
+    <string name="last_seen">Văzut ultima dată: %s</string>
+    <string name="this_device">Acest dispozitiv</string>
+
+    <!-- Empty states -->
+    <string name="no_devices_title">Nu s-au găsit dispozitive</string>
+    <string name="no_devices_message">Asigură-te că ești conectat la o rețea Wi-Fi și încearcă să scanezi din nou.</string>
+    <string name="no_wifi_title">Fără conexiune la rețea</string>
+    <string name="no_wifi_message">Nu s-au găsit interfețe de rețea active. Conectează-te la o rețea și încearcă din nou.</string>
+    <string name="no_active_interfaces">Nicio interfață activă</string>
+
+    <!-- Interface Types -->
+    <string name="interface_type_wifi">Wi-Fi</string>
+    <string name="network_name_unknown">Necunoscut</string>
+    <string name="interface_type_ethernet">Ethernet</string>
+    <string name="interface_type_vpn">VPN</string>
+    <string name="interface_type_cellular">Rețea mobilă</string>
+    <string name="interface_type_network">Rețea</string>
+    
+    <!-- Errors -->
+    <string name="error_scan_failed">Scanarea a eșuat: %s</string>
+    <string name="error_permission_denied">Permisiune refuzată</string>
+    <string name="error_no_network">Fără conexiune la rețea</string>
+
+    <!-- Permissions -->
+    <string name="permission_location_title">Îmbunătățește scanarea</string>
+    <string name="permission_location_message">Permisiunea de acces la locație este necesară pentru a accesa informațiile Wi-Fi utilizate la scanarea rețelei.</string>
+    <string name="permission_optional_message">Acordarea permisiunii de acces la locație poate ajuta la descoperirea mai multor dispozitive și la afișarea corectă a informațiilor despre rețea. Este opțională - aplicația va funcționa și fără ea.</string>
+    <string name="permission_nearby_title">Permisiune pentru dispozitive din apropiere</string>
+    <string name="permission_nearby_message">Această permisiune permite aplicației să descopere dispozitive din apropiere în rețeaua ta.</string>
+    <string name="grant_permission">Acordă permisiunea</string>
+    <string name="skip">Omite</string>
+    <string name="permission_local_network_denied">Permisiunea pentru dispozitive din apropiere este necesară pentru a scana rețeaua locală.</string>
+    <string name="action_open_settings">Deschide setările</string>
+
+    <!-- Theme -->
+    <string name="theme_light">Luminoasă</string>
+    <string name="theme_dark">Întunecată</string>
+    <string name="theme_system">Sistem</string>
+
+    <!-- Content descriptions -->
+    <string name="cd_device_icon">Pictogramă pentru tipul dispozitivului</string>
+    <string name="cd_scan_button">Pornește scanarea rețelei</string>
+    <string name="cd_device_status">Indicator de stare a dispozitivului</string>
+
+    <!-- Device Detail Screen -->
+    <string name="device_details">Detalii dispozitiv</string>
+    <string name="section_identity">Identitate</string>
+    <string name="section_network">Rețea</string>
+    <string name="deep_scan_results">Rezultatele scanării aprofundate</string>
+    <string name="open_ports">Porturi deschise</string>
+
+    <!-- Labels -->
+    <string name="label_ip_address">Adresă IP</string>
+    <string name="label_mac_address">Adresă MAC</string>
+    <string name="label_mac_address_randomized">Adresă MAC (aleatorie)</string>
+    <string name="label_vendor">Producător</string>
+    <string name="label_latency">Latență</string>
+    <string name="label_hostname">Nume gazdă</string>
+    <string name="label_netbios_name">Nume NetBIOS</string>
+    <string name="label_services">Servicii</string>
+    <string name="label_discovered_via">Descoperit prin</string>
+    <string name="label_detected_os">Sistem de operare detectat</string>
+    <string name="label_scan_duration">Durata scanării</string>
+    <string name="label_friendly_name">Nume afișat</string>
+    <string name="label_model">Model</string>
+    <string name="label_serial_number">Număr de serie</string>
+    <string name="label_os_hint">Indiciu despre sistemul de operare (TTL)</string>
+    <string name="label_workgroup">Grup de lucru</string>
+    <string name="label_upnp_type">Tip UPnP</string>
+    <string name="label_web_interface">Interfață web</string>
+
+    <!-- TTL-based OS hints -->
+    <string name="ttl_hint_unix">%d (Linux/Android/iOS)</string>
+    <string name="ttl_hint_windows">%d (Windows)</string>
+    <string name="ttl_hint_network">%d (Router/Switch)</string>
+
+    <!-- Fallbacks -->
+    <string name="port_service_unknown">Necunoscut</string>
+    <string name="cd_open_in_browser">Deschide în browser</string>
+
+    <!-- Deep Scan States -->
+    <string name="tap_to_deep_scan">Atinge pentru a începe o scanare aprofundată</string>
+    <string name="start_deep_scan">Pornește scanarea aprofundată</string>
+    <string name="no_open_ports">Nu s-au găsit porturi deschise</string>
+    <string name="scan_failed">Scanarea a eșuat</string>
+    <string name="device_offline">Dispozitivul este deconectat</string>
+
+    <!-- Actions -->
+    <string name="action_cancel">Anulează</string>
+    <string name="action_copy">Copiază</string>
+    <string name="copied_to_clipboard">Copiat în clipboard</string>
+    <string name="action_clear">Șterge</string>
+
+    <!-- Status -->
+    <string name="status_online">Conectat</string>
+    <string name="status_offline">Deconectat</string>
+
+    <!-- Format strings -->
+    <string name="latency_ms">%dms</string>
+    <string name="confidence_percent">Grad de încredere: %d%%</string>
+    <string name="duration_seconds">%.1fs</string>
+    <string name="action_retry">Încearcă din nou</string>
+    <string name="interface_option_format">%1$s (%2$s) - %3$s</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Setări</string>
+
+    <!-- Preference Categories -->
+    <string name="pref_category_appearance">Aspect</string>
+    <string name="pref_category_scanning">Scanare</string>
+    <string name="pref_category_data">Date</string>
+    <string name="pref_category_about">Despre</string>
+
+    <!-- Appearance Preferences -->
+    <string name="pref_theme_title">Temă</string>
+    <string name="pref_language_title">Limbă</string>
+    <string name="language_system_default">Limba implicită a sistemului</string>
+    <string name="pref_dynamic_colors_title">Culori dinamice</string>
+    <string name="pref_dynamic_colors_summary">Folosește culorile din imaginea de fundal (Android 12+)</string>
+
+    <!-- Scanning Preferences -->
+    <string name="pref_auto_scan_title">Scanare automată la pornire</string>
+    <string name="pref_auto_scan_summary">Pornește automat scanarea la deschiderea aplicației</string>
+    <string name="pref_scan_timeout_title">Timp limită scanare</string>
+    <string name="pref_neighbor_source_title">Acces la adresele MAC</string>
+    <string name="pref_neighbor_source_summary">Android 10+ ascunde aplicațiilor adresele MAC ale altor dispozitive. Citește-le folosind Shizuku sau acces root.</string>
+
+    <!-- Timeout options -->
+    <string name="timeout_fast">Rapidă (3 secunde)</string>
+    <string name="timeout_normal">Normală (5 secunde)</string>
+    <string name="timeout_thorough">Amănunțită (10 secunde)</string>
+
+    <!-- MAC address access options -->
+    <string name="neighbor_source_none">Dezactivat</string>
+    <string name="neighbor_source_root">Root</string>
+
+    <!-- Data Preferences -->
+    <string name="pref_clear_cache_title">Golește memoria cache</string>
+    <string name="pref_clear_cache_summary">Șterge datele temporare ale scanărilor</string>
+    <string name="pref_clear_history_title">Șterge istoricul dispozitivelor</string>
+    <string name="pref_clear_history_summary">Elimină toate informațiile salvate despre dispozitive</string>
+
+    <!-- About Preferences -->
+    <string name="pref_version_title">Versiunea</string>
+    <string name="pref_about_title">Despre Network Scanner</string>
+    <string name="pref_about_summary">Informații despre aplicație și contribuții</string>
+    <string name="pref_privacy_title">Politica de confidențialitate</string>
+    <string name="pref_privacy_summary">Cum sunt gestionate datele tale</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_clear_cache_title">Golești memoria cache?</string>
+    <string name="dialog_clear_cache_message">Această acțiune va șterge toate datele temporare ale scanărilor. Istoricul dispozitivelor va fi păstrat.</string>
+    <string name="dialog_clear_history_title">Ștergi istoricul dispozitivelor?</string>
+    <string name="dialog_clear_history_message">Această acțiune va elimina toate informațiile salvate despre dispozitive, inclusiv numele personalizate. Acțiunea nu poate fi anulată.</string>
+    <string name="dialog_about_title">Despre Network Scanner</string>
+    <string name="dialog_about_message" formatted="false">Network Scanner este un instrument puternic pentru descoperirea și analizarea dispozitivelor din rețeaua ta locală.\n\nDezvoltat cu grijă pentru confidențialitatea ta. Toate scanările au loc local, pe dispozitivul tău.\n\n⚠️ Notă: Detectarea dispozitivelor și scanarea porturilor nu sunt 100% precise. Rezultatele pot varia în funcție de condițiile rețelei și de configurațiile dispozitivelor.\n\nVersiunea 1.0.0 | Licență GPL-3.0</string>
+    <string name="view_on_github">Vezi pe GitHub</string>
+    <string name="github_url">https://github.com/usamaiqb/network-scanner</string>
+    <string name="deep_scan_disclaimer">Detectarea porturilor și a sistemului de operare este estimativă și poate să nu fie complet precisă</string>
+    <string name="dialog_privacy_title">Politica de confidențialitate</string>
+    <string name="dialog_privacy_message">Network Scanner îți respectă confidențialitatea:\n\n• Nu se colectează date: toate rezultatele scanărilor rămân pe dispozitivul tău\n• Fără reclame sau urmărire\n• Scanarea nu necesită permisiune de acces la internet\n\nPermisiunea de acces la locație este folosită doar pentru a accesa informațiile Wi-Fi, conform cerințelor Android, nu pentru a-ți urmări locația.</string>
+    <string name="dialog_theme_restart_title">Tema a fost schimbată</string>
+    <string name="dialog_theme_restart_message">Modificările culorilor dinamice vor fi aplicate complet după repornirea aplicației.</string>
+
+    <!-- Toast Messages -->
+    <string name="cache_cleared">Memoria cache a fost golită cu succes</string>
+    <string name="history_cleared">Istoricul dispozitivelor a fost șters</string>
+    <string name="neighbor_source_shizuku_unavailable">Shizuku nu rulează sau permisiunea a fost refuzată</string>
+    <string name="neighbor_source_root_unavailable">Accesul root a fost refuzat</string>
+    <string name="neighbor_status_ready">Pregătit</string>
+    <string name="neighbor_status_shizuku_will_prompt">Shizuku va solicita permisiunea</string>
+    <string name="neighbor_status_shizuku_denied">Permisiune refuzată. Acord-o din aplicația Shizuku</string>
+    <string name="neighbor_status_shizuku_outdated">Shizuku trebuie actualizat</string>
+    <string name="neighbor_status_shizuku_not_running">Shizuku nu rulează</string>
+    <string name="neighbor_status_root_will_prompt">Managerul root va solicita accesul</string>
+    <string name="neighbor_status_root_not_found">Nu a fost detectat acces root pe acest dispozitiv</string>
+    <string name="neighbor_status_waiting">Se așteaptă accesul…</string>
+
+    <!-- Accessibility - Content Descriptions -->
+    <string name="cd_settings_button">Deschide setările</string>
+    <string name="cd_theme_button">Schimbă tema</string>
+    <string name="cd_refresh_button">Reîmprospătează lista dispozitivelor</string>
+    <string name="cd_device_online">Dispozitivul este conectat</string>
+    <string name="cd_device_offline">Dispozitivul este deconectat</string>
+    <string name="cd_navigate_back">Navighează înapoi</string>
+    <string name="cd_start_deep_scan">Pornește scanarea aprofundată pentru acest dispozitiv</string>
+    <string name="cd_cancel_scan">Anulează scanarea curentă</string>
+    <string name="cd_empty_state_icon">Ilustrație fără dispozitive</string>
+    <string name="cd_network_info">Informații despre rețea</string>
+    <string name="cd_interface_selector">Selectează interfața de rețea</string>
+    <string name="cd_port_status">Portul %1$d este %2$s</string>
+
+    <!-- Device list accessibility -->
+    <string name="cd_device_item">%1$s, %2$s, IP %3$s</string>
+    <string name="cd_device_current">Acesta este dispozitivul tău actual</string>
+    <string name="cd_section_header">Secțiunea %1$s cu %2$d dispozitive</string>
+
+    <!-- Deep scan progress -->
+    <string name="deep_scan_port_progress">%1$d/%2$d porturi</string>
+    <string name="deep_scan_open_count">%d deschis/e</string>
+
+    <!-- Custom Device Names -->
+    <string name="edit_device_name">Editează numele dispozitivului</string>
+    <string name="edit_device_name_hint">Atribuie acestui dispozitiv un nume personalizat pentru a-l identifica mai ușor</string>
+    <string name="device_name">Numele dispozitivului</string>
+    <string name="action_save">Salvează</string>
+
+    <!-- Custom Ports -->
+    <string name="custom_ports">Porturi personalizate</string>
+    <string name="add_port">Adaugă port</string>
+    <string name="add_custom_port">Adaugă port personalizat</string>
+    <string name="port_number">Portul (Număr)</string>
+    <string name="service_name">Numele serviciului</string>
+    <string name="action_add">Adaugă</string>
+    <string name="delete_port">Șterge portul</string>
+    <string name="no_custom_ports">Nu sunt configurate porturi personalizate</string>
+    <string name="tap_add_to_create">Atinge + pentru a adăuga porturi personalizate de scanat</string>
+
+    <!-- Full Port Scan -->
+    <string name="full_scan">Scanare completă</string>
+    <string name="full_port_scan">Scanare completă a porturilor</string>
+    <string name="full_scan_warning">Vor fi scanate toate cele 65.535 de porturi ale acestui dispozitiv. Operațiunea poate dura câteva minute și poate genera trafic semnificativ în rețea.</string>
+    <string name="full_scan_details">• Durata scanării: 1–3 minute\n• Trafic intens de rețea\n• Poate fi detectată de sistemele de securitate</string>
+    <string name="action_start">Pornește</string>
+
+    <!-- Settings - Custom Ports -->
+    <string name="pref_custom_ports_title">Porturi personalizate</string>
+    <string name="pref_custom_ports_summary">Gestionează porturile scanate în timpul scanării aprofundate</string>
+
+    <!-- Device Icon Selection -->
+    <string name="choose_device_icon">Alege pictograma dispozitivului</string>
+
+    <!-- Network scanner progress -->
+    <string name="checking_network_connectivity">Se verifică conectivitatea rețelei…</string>
+    <string name="classifying_devices">Se clasifică dispozitivele</string>
+    <string name="identifying_devices">Se identifică dispozitivele…</string>
+    <string name="resolving_netbios_names">Se rezolvă numele NetBIOS</string>
+    <string name="finding_upnp_devices">Se caută dispozitive UPnP…</string>
+    <string name="discovering_services">Se descoperă serviciile…</string>
+    <string name="getting_device_information">Se obțin informațiile despre dispozitive…</string>
+    <string name="scanning_network">Se scanează rețeaua…</string>
+    <string name="reading_arp_cache">Se citește memoria cache ARP…</string>
+    <string name="analyzing_port">Se analizează portul %1$d…</string>
+    <string name="scanning_ports">Se scanează porturile…</string>
+    <string name="scanning_port">Se scanează portul %1$d…</string>
+    <string name="scanned_addresses_progress">Adrese scanate: %1$d/%2$d</string>
+    <string name="detecting_os">Se detectează sistemul de operare…</string>
+
+</resources>
