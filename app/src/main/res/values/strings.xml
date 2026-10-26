@@ -173,8 +173,6 @@
 
     <!-- About Preferences -->
     <string name="pref_version_title">Version</string>
-    <string name="pref_about_title">About Network Scanner</string>
-    <string name="pref_about_summary">App information and credits</string>
     <string name="pref_privacy_title">Privacy Policy</string>
     <string name="pref_privacy_summary">How your data is handled</string>
 

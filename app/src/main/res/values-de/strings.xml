@@ -170,8 +170,6 @@
 
     <!-- Über-Einstellungen -->
     <string name="pref_version_title">Version</string>
-    <string name="pref_about_title">Über Network Scanner</string>
-    <string name="pref_about_summary">App-Informationen und Danksagungen</string>
     <string name="pref_privacy_title">Datenschutzerklärung</string>
     <string name="pref_privacy_summary">Wie Ihre Daten behandelt werden</string>
 

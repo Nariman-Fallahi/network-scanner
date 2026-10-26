@@ -126,10 +126,11 @@ fun AppIdentityRow(
 }
 
 /**
- * The app's version, read from the installed package, in the shape each audience needs:
+ * The app's version, read from the installed package:
  *
  *  - release: `"Version 1.2.3"`
- *  - debug:   `"Version 1.2.3 (45) - Debug"`
+ *  - debug:   `"Version 1.2.3 (45)"`, or `"Version 1.2.3-debug (45)"` where the project sets
+ *    `versionNameSuffix`
  *
  * Read rather than hard-coded on purpose. A constant in the UI drifts from what shipped the
  * moment someone bumps `versionName` and forgets — the About dialog was still claiming 1.0.0
@@ -137,22 +138,23 @@ fun AppIdentityRow(
  *
  * The build number earns its place only where someone reads it back off a screenshot in a bug
  * report, which is a debug build; in a release identity row it is noise next to a version the
- * user might actually recognise. The split is decided here, from the installed package's
- * `FLAG_DEBUGGABLE`, rather than from a caller-passed flag — a shared component cannot see any
- * app's `BuildConfig`, and leaving it to the caller is how one app ends up shipping the other's
- * format.
+ * user might actually recognise. That split is decided here from the installed package's
+ * `FLAG_DEBUGGABLE`, because a shared component cannot see any app's `BuildConfig`.
+ *
+ * Naming the build type is deliberately *not* done here. Gradle's `versionNameSuffix` already
+ * puts it in `versionName`, so a component that appends its own word produces
+ * "Version 1.0.0-debug (1) - Debug" in any project using the standard mechanism. If you want a
+ * debug build to say so, set `versionNameSuffix` on the build type.
  *
  * [prefix] is exposed for localisation; pass an empty string for the bare version.
- * [debugLabel] is the suffix on a debuggable build.
  */
 @Composable
 fun rememberAppVersionLabel(
     prefix: String = "Version ",
-    unknown: String = "unknown",
-    debugLabel: String = "Debug"
+    unknown: String = "unknown"
 ): String {
     val context = LocalContext.current
-    return remember(context, prefix, unknown, debugLabel) {
+    return remember(context, prefix, unknown) {
         runCatching {
             val info = context.packageManager.getPackageInfo(context.packageName, 0)
             val name = info.versionName ?: unknown
@@ -167,7 +169,7 @@ fun rememberAppVersionLabel(
                     @Suppress("DEPRECATION")
                     info.versionCode.toLong()
                 }
-                "$prefix$name ($code) - $debugLabel"
+                "$prefix$name ($code)"
             }
         }.getOrDefault("$prefix$unknown")
     }

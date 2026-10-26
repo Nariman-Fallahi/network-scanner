@@ -147,8 +147,6 @@
 
     <!-- About Preferences -->
     <string name="pref_version_title">Версія</string>
-    <string name="pref_about_title">Про Network Scanner</string>
-    <string name="pref_about_summary">Інформація про програму та кредити</string>
     <string name="pref_privacy_title">Політика конфіденційності</string>
     <string name="pref_privacy_summary">Як обробляються ваші дані</string>
 

@@ -147,8 +147,6 @@
 
     <!-- About Preferences -->
     <string name="pref_version_title">Версия</string>
-    <string name="pref_about_title">О Сканере Сети</string>
-    <string name="pref_about_summary">Информация о приложении и авторы</string>
     <string name="pref_privacy_title">Политика конфиденциальности</string>
     <string name="pref_privacy_summary">Как обрабатываются ваши данные</string>
 

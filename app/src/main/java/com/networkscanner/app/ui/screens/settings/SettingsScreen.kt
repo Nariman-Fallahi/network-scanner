@@ -11,7 +11,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.AutoAwesome
 import androidx.compose.material.icons.rounded.Autorenew
 import androidx.compose.material.icons.rounded.Code
-import androidx.compose.material.icons.rounded.Description
 import androidx.compose.material.icons.rounded.Key
 import androidx.compose.material.icons.rounded.Language
 import androidx.compose.material.icons.rounded.Palette
@@ -35,7 +34,6 @@ import androidx.compose.ui.unit.dp
 import com.networkscanner.app.R
 import com.networkscanner.app.ui.SettingsViewModel
 import com.networkscanner.app.ui.expressive.ActionSettingsRow
-import com.networkscanner.app.ui.expressive.AppIdentityRow
 import com.networkscanner.app.ui.expressive.CollapsingLargeTopBar
 import com.networkscanner.app.ui.expressive.ControlSettingsRow
 import com.networkscanner.app.ui.expressive.ExternalLinkRow
@@ -174,16 +172,26 @@ fun SettingsScreen(
 
             item(key = "about") {
                 SettingsSection(stringResource(R.string.pref_category_about)) {
-                    // Chips rather than 24.dp icons, because ExternalLinkRow and
-                    // AppIdentityRow below use them: mixing the two leading sizes in one
-                    // group steps the text edge sideways halfway down.
+                    // The app's identity and the "what is this app" dialog are one subject,
+                    // so they are one row: the name and version state it, tapping explains
+                    // it. Split in two, the section named the app twice under a header
+                    // already saying About, and the identity half was the only row in the
+                    // group that did not respond to a tap -- which reads as broken rather
+                    // than as deliberate. It leads the section because it is the subject of
+                    // it; an inert identity row is what belongs at the foot as a signature.
                     ActionSettingsRow(
                         position = SegmentPosition.First,
-                        title = stringResource(R.string.pref_about_title),
-                        subtitle = stringResource(R.string.pref_about_summary),
-                        leading = { RowLeadingChip(Icons.Rounded.Description) },
+                        title = stringResource(R.string.app_name),
+                        subtitle = rememberAppVersionLabel(
+                            prefix = stringResource(R.string.pref_version_title) + " "
+                        ),
+                        leading = { RowLeadingChip(Icons.Rounded.Radar) },
                         onClick = { showAboutDialog = true }
                     )
+                    // No trailing chevron on either dialog row: every row in the group is
+                    // tappable now, so nothing is the odd one out, and Android's own Settings
+                    // marks navigable rows the same way -- not at all. The one real
+                    // distinction left is leaving the app, which ExternalLinkRow does mark.
                     ActionSettingsRow(
                         position = SegmentPosition.Middle,
                         title = stringResource(R.string.pref_privacy_title),
@@ -191,25 +199,11 @@ fun SettingsScreen(
                         leading = { RowLeadingChip(Icons.Rounded.Shield) },
                         onClick = { showPrivacyDialog = true }
                     )
-                    // Opens a browser rather than navigating, which is what the row's trailing
-                    // OpenInNew glyph is there to say. It also drops the scheme from the URL it
-                    // shows, so the subtitle reads as a destination instead of a link.
                     ExternalLinkRow(
-                        position = SegmentPosition.Middle,
+                        position = SegmentPosition.Last,
                         label = stringResource(R.string.view_on_github),
                         url = stringResource(R.string.github_url),
                         icon = Icons.Rounded.Code
-                    )
-                    // Closes the section as a signature. The version is read from the installed
-                    // package, never written down: the About dialog used to end with a literal
-                    // "Version 1.0.0" that was still there at 1.1.7, in all seven locales.
-                    AppIdentityRow(
-                        position = SegmentPosition.Last,
-                        appName = stringResource(R.string.app_name),
-                        versionLabel = rememberAppVersionLabel(
-                            prefix = stringResource(R.string.pref_version_title) + " "
-                        ),
-                        icon = Icons.Rounded.Radar
                     )
                 }
             }

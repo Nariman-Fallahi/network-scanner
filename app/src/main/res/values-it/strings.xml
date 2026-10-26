@@ -149,8 +149,6 @@
 
     <!-- About Preferences -->
     <string name="pref_version_title">Versione</string>
-    <string name="pref_about_title">Informazioni su Network Scanner</string>
-    <string name="pref_about_summary">Informazioni sull\'app e crediti</string>
     <string name="pref_privacy_title">Informativa sulla Privacy</string>
     <string name="pref_privacy_summary">Come vengono gestiti i tuoi dati</string>
 

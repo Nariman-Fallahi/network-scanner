@@ -148,8 +148,6 @@
 
     <!-- About Preferences -->
     <string name="pref_version_title">الإصدار</string>
-    <string name="pref_about_title">عن Network Scanner</string>
-    <string name="pref_about_summary">معلومات التطبيق والمساهمون</string>
     <string name="pref_privacy_title">سياسة الخصوصية</string>
     <string name="pref_privacy_summary">كيف نتعامل مع بياناتك</string>
 

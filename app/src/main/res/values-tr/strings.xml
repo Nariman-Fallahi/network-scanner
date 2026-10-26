@@ -172,8 +172,6 @@
 
     <!-- Hakkında Tercihleri -->
     <string name="pref_version_title">Sürüm</string>
-    <string name="pref_about_title">Network Scanner Hakkında</string>
-    <string name="pref_about_summary">Uygulama bilgileri ve katkıda bulunanlar</string>
     <string name="pref_privacy_title">Gizlilik Politikası</string>
     <string name="pref_privacy_summary">Verilerinizin nasıl işlendiği</string>
 
