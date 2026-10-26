@@ -1,7 +1,5 @@
 package com.networkscanner.app.ui.screens.settings
 
-import android.content.ActivityNotFoundException
-import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -14,10 +12,10 @@ import androidx.compose.material.icons.rounded.AutoAwesome
 import androidx.compose.material.icons.rounded.Autorenew
 import androidx.compose.material.icons.rounded.Code
 import androidx.compose.material.icons.rounded.Description
-import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.Key
 import androidx.compose.material.icons.rounded.Language
 import androidx.compose.material.icons.rounded.Palette
+import androidx.compose.material.icons.rounded.Radar
 import androidx.compose.material.icons.rounded.Shield
 import androidx.compose.material.icons.rounded.Tune
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -32,24 +30,24 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.core.net.toUri
-import com.networkscanner.app.BuildConfig
 import com.networkscanner.app.R
 import com.networkscanner.app.ui.SettingsViewModel
 import com.networkscanner.app.ui.expressive.ActionSettingsRow
+import com.networkscanner.app.ui.expressive.AppIdentityRow
 import com.networkscanner.app.ui.expressive.CollapsingLargeTopBar
 import com.networkscanner.app.ui.expressive.ControlSettingsRow
-import com.networkscanner.app.ui.expressive.InfoSettingsRow
+import com.networkscanner.app.ui.expressive.ExternalLinkRow
 import com.networkscanner.app.ui.expressive.PickerSettingsRow
+import com.networkscanner.app.ui.expressive.RowLeadingChip
 import com.networkscanner.app.ui.expressive.SectionGap
 import com.networkscanner.app.ui.expressive.SectionHeader
 import com.networkscanner.app.ui.expressive.SegmentPosition
 import com.networkscanner.app.ui.expressive.SegmentedGroup
 import com.networkscanner.app.ui.expressive.SwitchSettingsRow
 import com.networkscanner.app.ui.expressive.ValueBadge
+import com.networkscanner.app.ui.expressive.rememberAppVersionLabel
 import com.networkscanner.app.ui.expressive.rememberExpressiveScrollBehavior
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -71,7 +69,6 @@ fun SettingsScreen(
     var showPrivacyDialog by remember { mutableStateOf(false) }
     var showNeighborSourceSheet by remember { mutableStateOf(false) }
 
-    val context = LocalContext.current
     val scrollBehavior = rememberExpressiveScrollBehavior()
     val supportsDynamic = remember { viewModel.supportsDynamicColors() }
     val languageOptions = rememberLanguageOptions()
@@ -176,48 +173,43 @@ fun SettingsScreen(
             }
 
             item(key = "about") {
-                val versionSummary = buildString {
-                    append(BuildConfig.VERSION_NAME)
-                    if (BuildConfig.DEBUG) {
-                        append(" (${BuildConfig.VERSION_CODE})")
-                    }
-                }
-                val githubUrl = stringResource(R.string.github_url)
                 SettingsSection(stringResource(R.string.pref_category_about)) {
-                    // States the version and does nothing else, so it takes no click and
-                    // shows no ripple the user cannot explain.
-                    InfoSettingsRow(
-                        position = SegmentPosition.First,
-                        title = stringResource(R.string.pref_version_title),
-                        subtitle = versionSummary,
-                        icon = Icons.Rounded.Info
-                    )
+                    // Chips rather than 24.dp icons, because ExternalLinkRow and
+                    // AppIdentityRow below use them: mixing the two leading sizes in one
+                    // group steps the text edge sideways halfway down.
                     ActionSettingsRow(
-                        position = SegmentPosition.Middle,
+                        position = SegmentPosition.First,
                         title = stringResource(R.string.pref_about_title),
                         subtitle = stringResource(R.string.pref_about_summary),
-                        icon = Icons.Rounded.Description,
+                        leading = { RowLeadingChip(Icons.Rounded.Description) },
                         onClick = { showAboutDialog = true }
                     )
                     ActionSettingsRow(
                         position = SegmentPosition.Middle,
-                        title = stringResource(R.string.view_on_github),
-                        subtitle = githubUrl,
-                        icon = Icons.Rounded.Code,
-                        onClick = {
-                            try {
-                                context.startActivity(Intent(Intent.ACTION_VIEW, githubUrl.toUri()))
-                            } catch (_: ActivityNotFoundException) {
-                                // No browser available
-                            }
-                        }
-                    )
-                    ActionSettingsRow(
-                        position = SegmentPosition.Last,
                         title = stringResource(R.string.pref_privacy_title),
                         subtitle = stringResource(R.string.pref_privacy_summary),
-                        icon = Icons.Rounded.Shield,
+                        leading = { RowLeadingChip(Icons.Rounded.Shield) },
                         onClick = { showPrivacyDialog = true }
+                    )
+                    // Opens a browser rather than navigating, which is what the row's trailing
+                    // OpenInNew glyph is there to say. It also drops the scheme from the URL it
+                    // shows, so the subtitle reads as a destination instead of a link.
+                    ExternalLinkRow(
+                        position = SegmentPosition.Middle,
+                        label = stringResource(R.string.view_on_github),
+                        url = stringResource(R.string.github_url),
+                        icon = Icons.Rounded.Code
+                    )
+                    // Closes the section as a signature. The version is read from the installed
+                    // package, never written down: the About dialog used to end with a literal
+                    // "Version 1.0.0" that was still there at 1.1.7, in all seven locales.
+                    AppIdentityRow(
+                        position = SegmentPosition.Last,
+                        appName = stringResource(R.string.app_name),
+                        versionLabel = rememberAppVersionLabel(
+                            prefix = stringResource(R.string.pref_version_title) + " "
+                        ),
+                        icon = Icons.Rounded.Radar
                     )
                 }
             }
